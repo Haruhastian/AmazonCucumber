@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+gem 'selenium-webdriver'
+gem 'yaml'
+gem 'cucumber'
+gem 'webdrivers'
+gem 'pry'
+gem 'twilio-ruby'
