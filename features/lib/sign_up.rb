@@ -9,21 +9,25 @@ class SignUpAmazon
     sign_up_hover = @driver.find_element(:id, 'nav-link-accountList')
     @driver.action.move_to(sign_up_hover).perform
     start_here = @driver.find_element(:link_text, 'Start here.')
+
     @wait.until do
       start_here
     end
+
     if start_here.displayed?
       puts "1. Bisa perform hover & munculin start here."
     else
       puts "1. Tidak bisa perform hover & gak bisa munculin start here."
     end
+
     start_here.click
+
     @wait.until do
       @driver.find_element(:xpath, "//h1[contains(.,'Create account')]")
     end
   end
 
-  def filling_field(is_number = true)
+  def filling_field(is_number)
     #Fill all the required fields
     your_name = @driver.find_element(:id, 'ap_customer_name')
     your_name.send_keys("Hastian Haru")
@@ -42,14 +46,16 @@ class SignUpAmazon
     continue = @driver.find_element(:id, 'continue')
     continue.click
 
+    binding.pry
+
     #Verify Email Address
     @wait.until do
-      @driver.find_element(:xpath, '//h1[contains(.,"Verify email address")]')
+      @driver.find_element(:xpath, '//h1[contains(.,"Verify email address")]') or
+        @driver.find_element(:xpath, '//*[@id="a-page"]/div/div/div/div/div[1]/span')
     end
 
     otp_code = @driver.find_element(:id, 'cvf-input-code')
     if otp_code.displayed?
-      sleep(10)
     end
 
 

@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
 require 'webdrivers'
+require 'pry'
 
 Before do
   @driver = Selenium::WebDriver.for :chrome
