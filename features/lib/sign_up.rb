@@ -121,6 +121,6 @@ class SignUpAmazon
 
   end
 
-  #Buat def OTP mungkin setelah ini
+  #Probably making the new def for OTP
 
 end
