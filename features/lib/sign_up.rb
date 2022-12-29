@@ -121,7 +121,8 @@ class SignUpAmazon
 
   end
 
-  #Probably making the new def for OTP
+  # Probably making the new def for OTP
   # Testing for the remote master branch
+  # Updating from the local branch haru
 
 end
